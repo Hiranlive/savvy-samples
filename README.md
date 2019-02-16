@@ -1,5 +1,5 @@
 <h3>Savvy.io API</h3>
-This API allows to accept <b>Ethereum</b>, <b>Bitcoin</b>, <b>Bitcoin Cash</b>, <b>Bitcoin Gold</b>, <b>Litecoin</b>, <b>Dash</b> and <b>Ethereum Classic</b> payments. More details can be found on our website: https://www.savvy.io
+This API allows to accept <b>Ethereum</b>, <b>Bitcoin</b>, <b>Bitcoin Cash</b>, <b>Bitcoin Gold</b>, <b>Litecoin</b>, <b>Dash</b>, <b>Ethereum Classic</b> and DAI payments. More details can be found on our website: https://www.savvy.io
 
 ### **API Keys**
 In order to use the system, you will need an API Key. 
@@ -16,7 +16,7 @@ Before using the Savvy Merchant API, please enable the currencies you would like
 * We’ve added easy testing with a testnet capability. This is a sandbox environment where you can try your integration before going live to ensure everything is set up and working properly. Check out the Testnet section for more details.
 * We’ve given merchants more control over the wallet their customer pays to with the lock_address_timeout parameter for creating a payment request.
 
-**A note about V3 API - This API was built to integrate with our newly-released Savvy Wallet. You must create or import a wallet in order to use the Savvy Merchant API. [More on Upgrading from V2](https://github.com/savvyio/savvy-samples/wiki/Upgrading-from-V2-to-V3)
+**Important note for PayBear users - This API was built to integrate with our newly-released Savvy Wallet. You must create or import a wallet in order to use the Savvy Merchant API. [More on Upgrading from V2](https://github.com/savvyio/savvy-samples/wiki/Upgrading-from-V2-to-V3)
 
 
 <h3>Get Currencies</h3>
@@ -53,7 +53,7 @@ Before using the Savvy Merchant API, please enable the currencies you would like
   <tr>
       <td>crypto</td>
       <td>Crypto currency to accept (eth, btc, bch, ltc, dash, btg, etc) or ERC20 token in
-          "erc20:xxx" format where xxx is a token symbol, e.g. eos</td>
+          "erc20:xxx" format where xxx is a token symbol, e.g. dai</td>
     </tr>
   <tr>
     <td>token</td>
