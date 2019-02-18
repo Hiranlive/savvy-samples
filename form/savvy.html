@@ -1,37 +1,37 @@
-<div id="paybear" style="display: none">
-    <div class="p30 PayBear-spinner" style="display: none;">
+
+<div id="savvy" style="display: none">
+    <div class="p30 Savvy-spinner" style="display: none;">
         <p>Loading payment details...</p>
-        <div class="PayBear-spinner__container"><span class="PayBear-spinner__item"></span></div>
+        <div class="Savvy-spinner__container"><span class="Savvy-spinner__item"></span></div>
     </div>
 
-    <div class="p30 PayBear-app-error" style="display: none;">
+    <div class="p30 Savvy-app-error" style="display: none;">
         This payment method is temporarily unavailable. Please try again in a minute.
         <button class="P-btn P-btn-grey">Retry</button>
     </div>
-    <!-- PayBear widget-->
-    <div class="PayBear-app" style="display: none;">
-        <div class="PayBear-container">
-            <div class="PayBear">
-                <!-- PayBear header -->
-                <div class="PayBear__Nav">
-                    <a href="/" class="PayBear__Nav__arrow" style="display: none;">
+    <!-- Savvy widget-->
+    <div class="Savvy-app" style="display: none;">
+        <div class="Savvy-container">
+            <div class="Savvy">
+                <!-- Savvy header -->
+                <div class="Savvy__Nav">
+                    <a href="/" class="Savvy__Nav__arrow" style="display: none;">
                         <svg height="22" width="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="m15.605355 8.8542609h-13.7616838c-1.01823148 0-1.8436712.82344-1.8436712 1.8392051 0 1.015764.82543972 1.839205 1.8436712 1.839205h14.3762408l-2.483628 2.47761c-.719998.718254-.719998 1.882774 0 2.601028.719999.718255 1.887347.718255 2.607345 0l5.116373-5.103976c.412815-.411816.588939-.970336.528375-1.507333.06056-.536997-.11556-1.0955171-.528375-1.5073331l-5.116373-5.1039766c-.719998-.718254-1.887346-.718254-2.607345 0-.719998.718255-.719998 1.8827736 0 2.6010286z"></path>
                         </svg>
                     </a>
-                    <div class="PayBear__brand-link" style="display: none;">
+                    <div class="Savvy__brand-link" style="display: none;">
                         <span>
-                            Powered by <a href="https://www.paybear.io" target="_blank" rel="noopener noreferrer">
-                            PayBear.io<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"
-                                           class="PayBear__Nav__external">
-                            <path d="m333.875 38c-.482562 0-.875-.392-.875-.875v-12.25c0-.483.392438-.875.875-.875h5.6875c.241938 0 .4375.1955625.4375.4375v.875c0 .2419375-.195562.4375-.4375.4375h-4.8125v10.5h10.5v-4.8125c0-.2419375.195562-.4375.4375-.4375h.875c.241938 0 .4375.1955625.4375.4375v5.6875c0 .483-.392438.875-.875.875zm12.690554-14c .240249 0 .434446.1933285.434446.4344461v4.3444615c0 .1746474-.10557.3340891-.268053.4005594-.053872.0230256-.11035.0338868-.166393.0338868-.112956 0-.224174-.0443135-.307154-.1272927l-1.557489-1.5579239-4.344027 4.3444615c-.169869.1698684-.444438.1698684-.615176 0l-.614307-.6143069c-.169868-.1698684-.169868-.4444384 0-.6143068l4.344462-4.3444615-1.557924-1.5579239c-.124252-.1246861-.161614-.3114979-.094275-.4735463.066905-.1629173.225912-.2680533.401428-.2680533z"
-                                  fill="#b9b9b9" transform="translate(-333 -24)"></path>
-                            </svg></a>
+                            Powered by <a href="https://www.savvy.io" target="_blank" rel="noopener noreferrer">
+                            Savvy<svg height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"
+                                      class="Savvy__Nav__external">
+                                <path d="m333.875 38c-.482562 0-.875-.392-.875-.875v-12.25c0-.483.392438-.875.875-.875h5.6875c.241938 0 .4375.1955625.4375.4375v.875c0 .2419375-.195562.4375-.4375.4375h-4.8125v10.5h10.5v-4.8125c0-.2419375.195562-.4375.4375-.4375h.875c.241938 0 .4375.1955625.4375.4375v5.6875c0 .483-.392438.875-.875.875zm12.690554-14c .240249 0 .434446.1933285.434446.4344461v4.3444615c0 .1746474-.10557.3340891-.268053.4005594-.053872.0230256-.11035.0338868-.166393.0338868-.112956 0-.224174-.0443135-.307154-.1272927l-1.557489-1.5579239-4.344027 4.3444615c-.169869.1698684-.444438.1698684-.615176 0l-.614307-.6143069c-.169868-.1698684-.169868-.4444384 0-.6143068l4.344462-4.3444615-1.557924-1.5579239c-.124252-.1246861-.161614-.3114979-.094275-.4735463.066905-.1629173.225912-.2680533.401428-.2680533z"
+                                      fill="#b9b9b9" transform="translate(-333 -24)"></path></svg></a>
                         </span>
                     </div>
                 </div>
                 <!-- Select currency -->
-                <div class="PayBear__Icons"></div>
+                <div class="Savvy__Icons"></div>
                 <!-- Content -->
                 <div class="P-Payment P-box" style="display: none;">
                     <!-- Header of content-->
@@ -55,7 +55,7 @@
                                     <div class="P-Payment__value__price" style="display: none;">---</div>
                                 </div>
                             </div>
-                            <div class="P-Tabs" id="paybear-tabs">
+                            <div class="P-Tabs" id="savvy-tabs">
                                 <ul class="P-Tabs__Tab-list P-Tabs__Tab-list--second">
                                     <li role="tab" class="P-Tabs__Tab P-Tabs__Tab--wallet">Wallet</li>
                                     <li role="tab" class="P-Tabs__Tab P-Tabs__Tab--selected">Copy</li>
@@ -390,3 +390,4 @@
         </div>
     </div>
 </div>
+

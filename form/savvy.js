@@ -1,9 +1,9 @@
 (function() {
-    this.Paybear = function () {
+    this.Savvy = function () {
 
-        if (window.paybear instanceof Paybear) {
-            paybear.destroy();
-            window.paybear = undefined;
+        if (window.savvy instanceof Savvy) {
+            savvy.destroy();
+            window.savvy = undefined;
         }
 
         this.state = {
@@ -37,18 +37,18 @@
 
             newButton.addEventListener('click', function (e) {
                 e.preventDefault();
-                paybearInit.call(that);
+                savvyInit.call(that);
             })
         } else {
-            paybearInit.call(that);
+            savvyInit.call(that);
         }
 
     };
 
-    Paybear.prototype.destroy = function () {
+    Savvy.prototype.destroy = function () {
         var that = this;
         var state = that.state;
-        var appContainer = document.querySelector('.PayBear-app');
+        var appContainer = document.querySelector('.Savvy-app');
 
         appContainer.style.display = 'none';
 
@@ -66,7 +66,7 @@
         clearInterval(state.checkStatusInterval);
     };
 
-    function paybearInit() {
+    function savvyInit() {
 
         var defaults = {
             timer: 15 * 60,
@@ -94,7 +94,7 @@
             resizeFont(that.state.currencies[that.state.selected]['address']);
         };
 
-        that.root = document.getElementById('paybear');
+        that.root = document.getElementById('savvy');
         that.root.removeAttribute('style');
 
         that.state.html = that.root.innerHTML;
@@ -126,19 +126,19 @@
 
     function app() {
         var that = this;
-        that.coinsBlock = document.querySelector('.PayBear__Icons');
+        that.coinsBlock = document.querySelector('.Savvy__Icons');
         that.paymentBlock = document.querySelector('.P-Payment');
         that.paymentHeader = document.querySelector('.P-Payment__header');
         that.paymentHeaderTimer = document.querySelector('.P-Payment__header__timer');
         that.paymentHeaderTitle = document.querySelector('.P-Payment__header__title');
         that.paymentHeaderHelper = document.querySelector('.P-Payment__header__helper');
-        that.topBackButton = document.querySelector('.PayBear__Nav__arrow');
+        that.topBackButton = document.querySelector('.Savvy__Nav__arrow');
 
         var state = that.state;
         var options = that.options;
         that.defaultTimer = options.timer;
 
-        var appContainer = document.querySelector('.PayBear-app');
+        var appContainer = document.querySelector('.Savvy-app');
         appContainer.removeAttribute('style');
 
         if (options.modal && !options.settingsUrl) {
@@ -146,7 +146,7 @@
         }
 
         if (options.enablePoweredBy) {
-            document.querySelector('.PayBear__brand-link').removeAttribute('style');
+            document.querySelector('.Savvy__brand-link').removeAttribute('style');
         }
 
         if (typeof options.currencies === 'string') {
@@ -245,7 +245,7 @@
         coinsContainer.innerHTML = '';
 
         that.state.currencies.map(function (item, index) {
-            var classNames = ['PayBear__Item'];
+            var classNames = ['Savvy__Item'];
             var coin = document.createElement('div');
             coin.setAttribute('role', 'button');
             coin.setAttribute('tabindex', 0);
@@ -292,11 +292,11 @@
                 }
             };
 
-            coin.innerHTML = '<div class="PayBear__Item__icon">\n' +
+            coin.innerHTML = '<div class="Savvy__Item__icon">\n' +
                 '<img src="' + item.icon + '" alt="' + item.title + '"></div>\n' +
-                '<div class="PayBear__Item__code">' + item.code + '</div>\n' +
-                '<div class="PayBear__Item__name">' + item.title + '</div>\n' +
-                '<div class="PayBear__Item__val">' + (item.coinsValue ? item.coinsValue : '') + '</div>';
+                '<div class="Savvy__Item__code">' + item.code + '</div>\n' +
+                '<div class="Savvy__Item__name">' + item.title + '</div>\n' +
+                '<div class="Savvy__Item__val">' + (item.coinsValue ? item.coinsValue : '') + '</div>';
 
             coinsContainer.appendChild(coin);
         });
@@ -321,7 +321,7 @@
             that.topBackButton.removeEventListener('click', that.handleTopBackButton);
             that.handleTopBackButton = function(event) {
                 event.preventDefault();
-                paybearBack.call(that);
+                savvyBack.call(that);
             };
             that.topBackButton.addEventListener('click', that.handleTopBackButton);
         } else {
@@ -382,7 +382,7 @@
 
                 that.handleTopBackButton = function (event) {
                     event.preventDefault();
-                    paybearBack.call(that);
+                    savvyBack.call(that);
                 };
                 that.topBackButton.addEventListener('click', that.handleTopBackButton);
             }
@@ -537,7 +537,7 @@
         });
 
         // tabs
-        paybearTabs.call(that);
+        savvyTabs.call(that);
 
         var statusUrl = selectedCoin.statusUrl || options.statusUrl;
 
@@ -906,7 +906,7 @@
             textarea.setAttribute('readonly', '');
             textarea.value = text;
 
-            document.querySelector('.PayBear-app').appendChild(textarea);
+            document.querySelector('.Savvy-app').appendChild(textarea);
 
             selectByElement(textarea);
 
@@ -919,7 +919,7 @@
         }
     }
 
-    function paybearTabs() {
+    function savvyTabs() {
         var state = this.state;
         var selectedCoin = state.currencies[state.selected];
         var tabsClassNames = {
@@ -974,7 +974,7 @@
         }
     }
 
-    function paybearBack() {
+    function savvyBack() {
         var that = this;
         var options = that.options;
         var onBackClick = options.onBackClick;
@@ -1062,24 +1062,24 @@
     }
 
     function beforeCurrenciesSend() {
-        document.querySelector('.PayBear-spinner').removeAttribute('style');
-        document.querySelector('.PayBear-app').style.display = 'none';
-        document.querySelector('.PayBear-app-error').style.display = 'none';
+        document.querySelector('.Savvy-spinner').removeAttribute('style');
+        document.querySelector('.Savvy-app').style.display = 'none';
+        document.querySelector('.Savvy-app-error').style.display = 'none';
     }
 
     function handleCurrenciesError() {
         var that = this;
-        document.querySelector('.PayBear-spinner').style.display = 'none';
-        document.querySelector('.PayBear-app').style.display = 'none';
-        document.querySelector('.PayBear-app-error').removeAttribute('style');
+        document.querySelector('.Savvy-spinner').style.display = 'none';
+        document.querySelector('.Savvy-app').style.display = 'none';
+        document.querySelector('.Savvy-app-error').removeAttribute('style');
         if (typeof that.options.currencies === 'string') {
-            document.querySelector('.PayBear-app-error .P-btn').addEventListener('click', function retry(e) {
+            document.querySelector('.Savvy-app-error .P-btn').addEventListener('click', function retry(e) {
                 e.preventDefault();
                 fetchCurrencies.call(that);
                 this.removeEventListener('click', retry);
             });
         } else {
-            document.querySelector('.PayBear-app-error .P-btn').style.display = 'none';
+            document.querySelector('.Savvy-app-error .P-btn').style.display = 'none';
         }
 
         if (that.options.modal) {
@@ -1088,8 +1088,8 @@
     }
 
     function handleCurrenciesSuccess() {
-        document.querySelector('.PayBear-spinner').style.display = 'none';
-        document.querySelector('.PayBear-app').removeAttribute('style');
+        document.querySelector('.Savvy-spinner').style.display = 'none';
+        document.querySelector('.Savvy-app').removeAttribute('style');
     }
 
     function beforeCurrencySend() {
@@ -1100,24 +1100,24 @@
     function handleCurrencyError() {
         var that = this;
         that.coinsBlock.classList.remove('P-disabled');
-        document.querySelector('.PayBear-app').style.display = 'none';
-        document.querySelector('.PayBear-app-error').removeAttribute('style');
+        document.querySelector('.Savvy-app').style.display = 'none';
+        document.querySelector('.Savvy-app-error').removeAttribute('style');
 
         if (that.state.currencies.length > 1) {
-            document.querySelector('.PayBear-app-error .P-btn').textContent = 'Back';
-            document.querySelector('.PayBear-app-error .P-btn').addEventListener('click', function retry(e) {
+            document.querySelector('.Savvy-app-error .P-btn').textContent = 'Back';
+            document.querySelector('.Savvy-app-error .P-btn').addEventListener('click', function retry(e) {
                 e.preventDefault();
                 if (typeof that.options.currencies === 'string') {
                     fetchCurrencies.call(that);
                 } else {
-                    document.querySelector('.PayBear-app').removeAttribute('style');
-                    document.querySelector('.PayBear-app-error').style.display = 'none';
+                    document.querySelector('.Savvy-app').removeAttribute('style');
+                    document.querySelector('.Savvy-app-error').style.display = 'none';
                     fillCoins.call(that);
                 }
                 this.removeEventListener('click', retry);
             });
         } else {
-            document.querySelector('.PayBear-app-error .P-btn').style.display = 'none';
+            document.querySelector('.Savvy-app-error .P-btn').style.display = 'none';
         }
 
         if (that.options.modal) {
@@ -1154,11 +1154,11 @@
     function initModal() {
         var that = this;
         var modal = document.createElement('div');
-        modal.className = 'PayBearModal';
+        modal.className = 'SavvyModal';
         var overlay = document.createElement('div');
-        overlay.className = 'PayBearModal__Overlay';
+        overlay.className = 'SavvyModal__Overlay';
         var modalContent = document.createElement('div');
-        modalContent.className = 'PayBearModal__Content';
+        modalContent.className = 'SavvyModal__Content';
         modalContent.appendChild(that.root);
         modal.appendChild(overlay);
         modal.appendChild(modalContent);
@@ -1199,8 +1199,8 @@
 
     function updateModal() {
         var that = this;
-        var openedModalClass = 'PayBearModal--open';
-        var openedModalBodyClass = 'PayBearModal__Body--open';
+        var openedModalClass = 'SavvyModal--open';
+        var openedModalBodyClass = 'SavvyModal__Body--open';
 
         if (that.state.isModalShown) {
             that.modal.classList.add(openedModalClass);
@@ -1214,7 +1214,7 @@
     function handleModalOverlay() {
         var that = this;
         that.root.style.height = 'auto';
-        var overlay = document.querySelector('.PayBearModal__Overlay');
+        var overlay = document.querySelector('.SavvyModal__Overlay');
         var newOverlay = overlay.cloneNode(true);
 
         overlay.parentNode.replaceChild(newOverlay, overlay);
