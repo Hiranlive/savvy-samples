@@ -5,7 +5,7 @@ var SAVVY_SECRET = 'secAPIKEY';
 function getAddress(orderId, token, callback) {
   var callbackUrl = 'http://CHANGEME.com/savvy/callback/' + orderId;
   var lock_address = 3600;
-  var url = 'https://api.savvy.io/v3/' + token.toLowerCase() + '/payment/' + '?token=' + SAVVY_SECRET + '&lock_address=' + lock_address;
+  var url = 'https://api.savvy.io/v3/' + token.toLowerCase() + '/payment/' + encodeURI(callbackUrl) + '?token=' + SAVVY_SECRET + '&lock_address=' + lock_address;
 
   https.get(url, function (res) {
     var rawData = '';
